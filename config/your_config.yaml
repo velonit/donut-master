@@ -1,0 +1,56 @@
+# config.yaml
+
+# Data paths
+data:
+  train:
+    path: "dataset/train"
+    metadata_file: "metadata.jsonl"
+  validation:
+    path: "dataset/validation"
+    metadata_file: "metadata.jsonl"
+  test:
+    path: "dataset/test"
+    metadata_file: "metadata.jsonl"
+
+# Model settings
+
+
+# Training settings
+training:
+  batch_size: 16
+  learning_rate: 1e-5
+  num_epochs: 10
+  optimizer: "adam"  # Or another optimizer, e.g., 'sgd'
+  scheduler: "linear"  # Learning rate scheduler, if applicable
+  checkpoint_dir: "checkpoints"  # Directory to save model checkpoints
+  log_dir: "logs"  # Directory to save training logs
+
+# Evaluation settings
+evaluation:
+  metrics: ["accuracy", "f1"]  # Metrics to evaluate the model
+  eval_interval: 1000  # Interval for evaluation during training
+
+# Miscellaneous settings
+misc:
+  seed: 42  # Random seed for reproducibility
+  device: "cuda"  # Device to run training on, e.g., 'cuda' or 'cpu'
+  num_workers: 4  # Number of workers for data loading
+result_path: "./result"
+exp_name: "experiment_1"
+exp_version: "v1"
+
+input_size: [960, 1280]
+max_length: 256
+align_long_axis: False
+num_nodes: 1
+seed: 2022
+lr: 3e-5
+warmup_steps: 300
+num_training_samples_per_epoch: 1368
+max_epochs: 10
+max_steps: -1
+num_workers: 8
+val_check_interval: 1.0
+check_val_every_n_epoch: 1
+gradient_clip_val: 1.0
+verbose: True
